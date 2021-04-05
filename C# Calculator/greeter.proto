@@ -1,0 +1,23 @@
+//Code adapted from Google's Codelab example
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package com.example.grpc;
+
+message HelloRequest {
+    double query = 1;//initialises the request type
+}
+
+message HelloResponse {
+    double response = 1;//initialises the response type
+}
+
+//a square root service
+service SquareRootService{
+    rpc squareRoot(HelloRequest) returns (HelloResponse);//returns the response
+}
